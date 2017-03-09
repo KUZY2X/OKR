@@ -1,0 +1,28 @@
+C:\Users\Neyro\Desktop\TeamBuilding\TeamBuilding\bin\Debug\TeamBuilding.exe.config
+C:\Users\Neyro\Desktop\TeamBuilding\TeamBuilding\bin\Debug\TeamBuilding.exe
+C:\Users\Neyro\Desktop\TeamBuilding\TeamBuilding\bin\Debug\TeamBuilding.pdb
+C:\Users\Neyro\Desktop\TeamBuilding\TeamBuilding\bin\Debug\EntityFramework.dll
+C:\Users\Neyro\Desktop\TeamBuilding\TeamBuilding\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Neyro\Desktop\TeamBuilding\TeamBuilding\bin\Debug\EntityFramework.xml
+C:\Users\Neyro\Desktop\TeamBuilding\TeamBuilding\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Neyro\Desktop\TeamBuilding\TeamBuilding\obj\Debug\TeamBuilding.csprojResolveAssemblyReference.cache
+C:\Users\Neyro\Desktop\TeamBuilding\TeamBuilding\obj\Debug\TeamBuilding.Properties.Resources.resources
+C:\Users\Neyro\Desktop\TeamBuilding\TeamBuilding\obj\Debug\TeamBuilding.csproj.GenerateResource.Cache
+C:\Users\Neyro\Desktop\TeamBuilding\TeamBuilding\obj\Debug\TeamBuilding.exe
+C:\Users\Neyro\Desktop\TeamBuilding\TeamBuilding\obj\Debug\TeamBuilding.pdb
+C:\Users\Neyro\Desktop\TeamBuilding\TeamBuilding\obj\Debug\TeamBuilding.UserProfile.resources
+C:\Users\Neyro\Desktop\TeamBuilding\TeamBuilding\obj\Debug\TeamBuilding.CreateProject.resources
+D:\с# тести\Новая папка\TeamBuilding\TeamBuilding\bin\Debug\TeamBuilding.exe.config
+D:\с# тести\Новая папка\TeamBuilding\TeamBuilding\obj\Debug\TeamBuilding.exe
+D:\с# тести\Новая папка\TeamBuilding\TeamBuilding\obj\Debug\TeamBuilding.pdb
+D:\с# тести\Новая папка\TeamBuilding\TeamBuilding\bin\Debug\TeamBuilding.exe
+D:\с# тести\Новая папка\TeamBuilding\TeamBuilding\bin\Debug\TeamBuilding.pdb
+D:\с# тести\Новая папка\TeamBuilding\TeamBuilding\bin\Debug\EntityFramework.dll
+D:\с# тести\Новая папка\TeamBuilding\TeamBuilding\bin\Debug\EntityFramework.SqlServer.dll
+D:\с# тести\Новая папка\TeamBuilding\TeamBuilding\bin\Debug\EntityFramework.xml
+D:\с# тести\Новая папка\TeamBuilding\TeamBuilding\bin\Debug\EntityFramework.SqlServer.xml
+D:\с# тести\Новая папка\TeamBuilding\TeamBuilding\obj\Debug\TeamBuilding.csprojResolveAssemblyReference.cache
+D:\с# тести\Новая папка\TeamBuilding\TeamBuilding\obj\Debug\TeamBuilding.UserProfile.resources
+D:\с# тести\Новая папка\TeamBuilding\TeamBuilding\obj\Debug\TeamBuilding.CreateProject.resources
+D:\с# тести\Новая папка\TeamBuilding\TeamBuilding\obj\Debug\TeamBuilding.Properties.Resources.resources
+D:\с# тести\Новая папка\TeamBuilding\TeamBuilding\obj\Debug\TeamBuilding.csproj.GenerateResource.Cache
