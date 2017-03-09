@@ -1,0 +1,10 @@
+D:\teamdevelopment\teamdevelopment\bin\Debug\teamdevelopment.exe.config
+D:\teamdevelopment\teamdevelopment\bin\Debug\teamdevelopment.exe
+D:\teamdevelopment\teamdevelopment\bin\Debug\teamdevelopment.pdb
+D:\teamdevelopment\teamdevelopment\obj\Debug\teamdevelopment.csprojResolveAssemblyReference.cache
+D:\teamdevelopment\teamdevelopment\obj\Debug\teamdevelopment.Form1.resources
+D:\teamdevelopment\teamdevelopment\obj\Debug\teamdevelopment.Properties.Resources.resources
+D:\teamdevelopment\teamdevelopment\obj\Debug\teamdevelopment.csproj.GenerateResource.Cache
+D:\teamdevelopment\teamdevelopment\obj\Debug\teamdevelopment.exe
+D:\teamdevelopment\teamdevelopment\obj\Debug\teamdevelopment.pdb
+D:\teamdevelopment\teamdevelopment\obj\Debug\teamdevelopment.Info.resources
