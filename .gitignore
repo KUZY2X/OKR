@@ -5,6 +5,7 @@
 /TeamBuilding/TeamBuilding/*.diagram
 /TeamBuilding/TeamBuilding/obj
 /TeamBuilding/.vs
+
 /Фінал/TeamBuilding/TeamBuilding/obj
 /Фінал/TeamBuilding/TeamBuilding/*.cs
 /Фінал/TeamBuilding/TeamBuilding/*.tt
@@ -12,3 +13,11 @@
 /Фінал/TeamBuilding/TeamBuilding/*.diagram
 /Фінал/TeamBuilding/packages
 /Фінал/TeamBuilding/.vs
+
+/Fix/TeamBuilding/TeamBuilding/obj
+/Fix/TeamBuilding/TeamBuilding/*.cs
+/Fix/TeamBuilding/TeamBuilding/*.tt
+/Fix/TeamBuilding/TeamBuilding/*.edmx
+/Fix/TeamBuilding/TeamBuilding/*.diagram
+/Fix/TeamBuilding/packages
+/Fix/TeamBuilding/.vs
