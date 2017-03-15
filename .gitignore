@@ -21,3 +21,11 @@
 /Fix/TeamBuilding/TeamBuilding/*.diagram
 /Fix/TeamBuilding/packages
 /Fix/TeamBuilding/.vs
+
+/Fix2.0/TeamBuilding/TeamBuilding/obj
+/Fix2.0/TeamBuilding/TeamBuilding/*.cs
+/Fix2.0/TeamBuilding/TeamBuilding/*.tt
+/Fix2.0/TeamBuilding/TeamBuilding/*.edmx
+/Fix2.0/TeamBuilding/TeamBuilding/*.diagram
+/Fix2.0/TeamBuilding/packages
+/Fix2.0/TeamBuilding/.vs
