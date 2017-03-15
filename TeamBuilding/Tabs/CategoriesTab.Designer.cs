@@ -50,7 +50,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.bunifuCustomLabel1);
             this.Name = "CategoriesTab";
-            this.Size = new System.Drawing.Size(750, 1100);
+            this.Size = new System.Drawing.Size(700, 1000);
             this.ResumeLayout(false);
             this.PerformLayout();
 

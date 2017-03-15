@@ -40,6 +40,9 @@
             this.bunifuCustomLabel1 = new ns1.BunifuCustomLabel();
             this.bunifuMetroTextbox1 = new ns1.BunifuMetroTextbox();
             this.slideA = new System.Windows.Forms.Panel();
+            this.bunifuCustomLabel10 = new ns1.BunifuCustomLabel();
+            this.bunifuCustomLabel9 = new ns1.BunifuCustomLabel();
+            this.bunifuCustomLabel6 = new ns1.BunifuCustomLabel();
             this.bunifuiOSSwitch1 = new ns1.BunifuiOSSwitch();
             this.bunifuCustomLabel5 = new ns1.BunifuCustomLabel();
             this.bunifuCustomLabel4 = new ns1.BunifuCustomLabel();
@@ -57,6 +60,7 @@
             this.bunifuMetroTextbox5 = new ns1.BunifuMetroTextbox();
             this.bunifuTransition1 = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.bunifuSeparator1 = new ns1.BunifuSeparator();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.slideA.SuspendLayout();
             this.slideB.SuspendLayout();
             this.SuspendLayout();
@@ -210,9 +214,13 @@
             this.bunifuMetroTextbox1.Size = new System.Drawing.Size(290, 35);
             this.bunifuMetroTextbox1.TabIndex = 5;
             this.bunifuMetroTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bunifuMetroTextbox1.OnValueChanged += new System.EventHandler(this.bunifuMetroTextbox1_OnValueChanged);
             // 
             // slideA
             // 
+            this.slideA.Controls.Add(this.bunifuCustomLabel10);
+            this.slideA.Controls.Add(this.bunifuCustomLabel9);
+            this.slideA.Controls.Add(this.bunifuCustomLabel6);
             this.slideA.Controls.Add(this.bunifuiOSSwitch1);
             this.slideA.Controls.Add(this.bunifuCustomLabel5);
             this.slideA.Controls.Add(this.bunifuThinButton24);
@@ -228,6 +236,49 @@
             this.slideA.Name = "slideA";
             this.slideA.Size = new System.Drawing.Size(330, 320);
             this.slideA.TabIndex = 6;
+            // 
+            // bunifuCustomLabel10
+            // 
+            this.bunifuCustomLabel10.AutoSize = true;
+            this.bunifuTransition1.SetDecoration(this.bunifuCustomLabel10, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuCustomLabel10.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.bunifuCustomLabel10.ForeColor = System.Drawing.Color.Red;
+            this.bunifuCustomLabel10.Location = new System.Drawing.Point(165, 145);
+            this.bunifuCustomLabel10.Name = "bunifuCustomLabel10";
+            this.bunifuCustomLabel10.Size = new System.Drawing.Size(143, 17);
+            this.bunifuCustomLabel10.TabIndex = 15;
+            this.bunifuCustomLabel10.Text = "Password is not valid";
+            this.toolTip1.SetToolTip(this.bunifuCustomLabel10, "Password must contain at least one upper case character, one special character or" +
+        " number and should not be longer than 15 characters.");
+            this.bunifuCustomLabel10.Visible = false;
+            // 
+            // bunifuCustomLabel9
+            // 
+            this.bunifuCustomLabel9.AutoSize = true;
+            this.bunifuTransition1.SetDecoration(this.bunifuCustomLabel9, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuCustomLabel9.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.bunifuCustomLabel9.ForeColor = System.Drawing.Color.Red;
+            this.bunifuCustomLabel9.Location = new System.Drawing.Point(190, 80);
+            this.bunifuCustomLabel9.Name = "bunifuCustomLabel9";
+            this.bunifuCustomLabel9.Size = new System.Drawing.Size(117, 17);
+            this.bunifuCustomLabel9.TabIndex = 14;
+            this.bunifuCustomLabel9.Text = "Email is not valid";
+            this.toolTip1.SetToolTip(this.bunifuCustomLabel9, "Email should be a valid account.");
+            this.bunifuCustomLabel9.Visible = false;
+            // 
+            // bunifuCustomLabel6
+            // 
+            this.bunifuCustomLabel6.AutoSize = true;
+            this.bunifuTransition1.SetDecoration(this.bunifuCustomLabel6, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuCustomLabel6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.bunifuCustomLabel6.ForeColor = System.Drawing.Color.Red;
+            this.bunifuCustomLabel6.Location = new System.Drawing.Point(185, 15);
+            this.bunifuCustomLabel6.Name = "bunifuCustomLabel6";
+            this.bunifuCustomLabel6.Size = new System.Drawing.Size(122, 17);
+            this.bunifuCustomLabel6.TabIndex = 13;
+            this.bunifuCustomLabel6.Text = "Name is not valid";
+            this.toolTip1.SetToolTip(this.bunifuCustomLabel6, "Name should contain at least 6 characters and not be longer than 15 characters.");
+            this.bunifuCustomLabel6.Visible = false;
             // 
             // bunifuiOSSwitch1
             // 
@@ -285,6 +336,7 @@
             this.bunifuMetroTextbox3.Size = new System.Drawing.Size(290, 35);
             this.bunifuMetroTextbox3.TabIndex = 9;
             this.bunifuMetroTextbox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bunifuMetroTextbox3.OnValueChanged += new System.EventHandler(this.bunifuMetroTextbox3_OnValueChanged);
             // 
             // bunifuCustomLabel3
             // 
@@ -315,6 +367,7 @@
             this.bunifuMetroTextbox2.Size = new System.Drawing.Size(290, 35);
             this.bunifuMetroTextbox2.TabIndex = 7;
             this.bunifuMetroTextbox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bunifuMetroTextbox2.OnValueChanged += new System.EventHandler(this.bunifuMetroTextbox2_OnValueChanged);
             // 
             // bunifuCustomLabel2
             // 
@@ -394,7 +447,7 @@
             this.bunifuThinButton25.Size = new System.Drawing.Size(95, 45);
             this.bunifuThinButton25.TabIndex = 3;
             this.bunifuThinButton25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuThinButton25.Click += new System.EventHandler(this.bunifuThinButton25_Click);
+            this.bunifuThinButton25.Click += new System.EventHandler(this.bunifuThinButton24_Click);
             // 
             // bunifuCustomLabel7
             // 
@@ -571,6 +624,10 @@
         private ns1.BunifuSeparator bunifuSeparator1;
         private ns1.BunifuThinButton2 bunifuThinButton27;
         private ns1.BunifuiOSSwitch bunifuiOSSwitch1;
+        private ns1.BunifuCustomLabel bunifuCustomLabel10;
+        private ns1.BunifuCustomLabel bunifuCustomLabel9;
+        private ns1.BunifuCustomLabel bunifuCustomLabel6;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 

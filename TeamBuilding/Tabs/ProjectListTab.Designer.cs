@@ -1,6 +1,6 @@
 ﻿namespace TeamBuilding.Tabs
 {
-    partial class ProfileTab
+    partial class ProjectListTab
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,36 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.bunifuCustomLabel1 = new ns1.BunifuCustomLabel();
             this.SuspendLayout();
             // 
-            // bunifuCustomLabel1
-            // 
-            this.bunifuCustomLabel1.AutoSize = true;
-            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(50, 50);
-            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(95, 33);
-            this.bunifuCustomLabel1.TabIndex = 6;
-            this.bunifuCustomLabel1.Text = "Profile";
-            // 
-            // ProfileTab
+            // ProjectListTab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
+            this.AutoScrollMinSize = new System.Drawing.Size(1, 1);
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.bunifuCustomLabel1);
-            this.Name = "ProfileTab";
+            this.Name = "ProjectListTab";
             this.Size = new System.Drawing.Size(700, 1000);
+            this.Load += new System.EventHandler(this.ProjectListTab_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private ns1.BunifuCustomLabel bunifuCustomLabel1;
     }
 }

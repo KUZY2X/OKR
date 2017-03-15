@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
             BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.bunifuDragControl1 = new ns1.BunifuDragControl(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.bunifuThinButton24 = new ns1.BunifuThinButton2();
@@ -55,14 +55,15 @@
             this.bunifuCustomLabel2 = new ns1.BunifuCustomLabel();
             this.loader = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.projectTab1 = new TeamBuilding.ProjectTab();
             this.categoriesTab1 = new TeamBuilding.Tabs.CategoriesTab();
-            this.profileTab1 = new TeamBuilding.Tabs.ProfileTab();
+            this.profileTab1 = new TeamBuilding.Tabs.ProjectListTab();
             this.activityTab1 = new TeamBuilding.Tabs.ActivityTab();
             this.searchTab1 = new TeamBuilding.Tabs.SearchTab();
-            this.projectTab1 = new TeamBuilding.Tabs.ProjectTab();
+            this.projectListTab1 = new TeamBuilding.Tabs.ProjectListTab();
             this.bunifuTransition1 = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.bunifuTransition2 = new BunifuAnimatorNS.BunifuTransition(this.components);
-            this.bunifuThinButton25 = new ns1.BunifuThinButton2();
+            this.profileTab2 = new TeamBuilding.Tabs.ProfileTab();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
@@ -84,7 +85,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
-            this.panel1.Controls.Add(this.bunifuThinButton25);
             this.panel1.Controls.Add(this.bunifuThinButton24);
             this.panel1.Controls.Add(this.bunifuThinButton23);
             this.panel1.Controls.Add(this.bunifuThinButton22);
@@ -524,11 +524,11 @@
             this.bunifuTransition2.SetDecoration(this.bunifuCustomLabel2, BunifuAnimatorNS.DecorationType.None);
             this.bunifuCustomLabel2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.bunifuCustomLabel2.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(445, 0);
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(325, 0);
             this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
-            this.bunifuCustomLabel2.Size = new System.Drawing.Size(151, 21);
+            this.bunifuCustomLabel2.Size = new System.Drawing.Size(276, 21);
             this.bunifuCustomLabel2.TabIndex = 7;
-            this.bunifuCustomLabel2.Text = "2017 Volkov Andrii";
+            this.bunifuCustomLabel2.Text = "2017 Volkov Andrii, Danyliv Roman";
             // 
             // loader
             // 
@@ -546,11 +546,13 @@
             // 
             this.panel3.AutoScroll = true;
             this.panel3.AutoScrollMinSize = new System.Drawing.Size(5, 5);
+            this.panel3.Controls.Add(this.profileTab2);
+            this.panel3.Controls.Add(this.projectTab1);
             this.panel3.Controls.Add(this.categoriesTab1);
             this.panel3.Controls.Add(this.profileTab1);
             this.panel3.Controls.Add(this.activityTab1);
             this.panel3.Controls.Add(this.searchTab1);
-            this.panel3.Controls.Add(this.projectTab1);
+            this.panel3.Controls.Add(this.projectListTab1);
             this.panel3.Controls.Add(this.loader);
             this.bunifuTransition2.SetDecoration(this.panel3, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition1.SetDecoration(this.panel3, BunifuAnimatorNS.DecorationType.None);
@@ -559,6 +561,18 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(600, 475);
             this.panel3.TabIndex = 4;
+            // 
+            // projectTab1
+            // 
+            this.projectTab1.BackColor = System.Drawing.Color.White;
+            this.bunifuTransition1.SetDecoration(this.projectTab1, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition2.SetDecoration(this.projectTab1, BunifuAnimatorNS.DecorationType.None);
+            this.projectTab1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.projectTab1.Location = new System.Drawing.Point(0, 0);
+            this.projectTab1.Name = "projectTab1";
+            this.projectTab1.Size = new System.Drawing.Size(600, 475);
+            this.projectTab1.TabIndex = 7;
+            this.projectTab1.Visible = false;
             // 
             // categoriesTab1
             // 
@@ -576,6 +590,8 @@
             // profileTab1
             // 
             this.profileTab1.AutoScroll = true;
+            this.profileTab1.AutoScrollMinSize = new System.Drawing.Size(1, 1);
+            this.profileTab1.BackColor = System.Drawing.Color.White;
             this.bunifuTransition1.SetDecoration(this.profileTab1, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition2.SetDecoration(this.profileTab1, BunifuAnimatorNS.DecorationType.None);
             this.profileTab1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -588,6 +604,7 @@
             // activityTab1
             // 
             this.activityTab1.AutoScroll = true;
+            this.activityTab1.BackColor = System.Drawing.Color.White;
             this.bunifuTransition1.SetDecoration(this.activityTab1, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition2.SetDecoration(this.activityTab1, BunifuAnimatorNS.DecorationType.None);
             this.activityTab1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -600,6 +617,7 @@
             // searchTab1
             // 
             this.searchTab1.AutoScroll = true;
+            this.searchTab1.BackColor = System.Drawing.Color.White;
             this.bunifuTransition1.SetDecoration(this.searchTab1, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition2.SetDecoration(this.searchTab1, BunifuAnimatorNS.DecorationType.None);
             this.searchTab1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -609,18 +627,19 @@
             this.searchTab1.TabIndex = 3;
             this.searchTab1.Visible = false;
             // 
-            // projectTab1
+            // projectListTab1
             // 
-            this.projectTab1.AutoScroll = true;
-            this.projectTab1.AutoScrollMinSize = new System.Drawing.Size(1, 1);
-            this.bunifuTransition1.SetDecoration(this.projectTab1, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuTransition2.SetDecoration(this.projectTab1, BunifuAnimatorNS.DecorationType.None);
-            this.projectTab1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.projectTab1.Location = new System.Drawing.Point(0, 0);
-            this.projectTab1.Name = "projectTab1";
-            this.projectTab1.Size = new System.Drawing.Size(600, 475);
-            this.projectTab1.TabIndex = 2;
-            this.projectTab1.Visible = false;
+            this.projectListTab1.AutoScroll = true;
+            this.projectListTab1.AutoScrollMinSize = new System.Drawing.Size(1, 1);
+            this.projectListTab1.BackColor = System.Drawing.Color.White;
+            this.bunifuTransition1.SetDecoration(this.projectListTab1, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition2.SetDecoration(this.projectListTab1, BunifuAnimatorNS.DecorationType.None);
+            this.projectListTab1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.projectListTab1.Location = new System.Drawing.Point(0, 0);
+            this.projectListTab1.Name = "projectListTab1";
+            this.projectListTab1.Size = new System.Drawing.Size(600, 475);
+            this.projectListTab1.TabIndex = 2;
+            this.projectListTab1.Visible = false;
             // 
             // bunifuTransition1
             // 
@@ -664,33 +683,17 @@
             animation1.TransparencyCoeff = 1F;
             this.bunifuTransition2.DefaultAnimation = animation1;
             // 
-            // bunifuThinButton25
+            // profileTab2
             // 
-            this.bunifuThinButton25.ActiveBorderThickness = 1;
-            this.bunifuThinButton25.ActiveCornerRadius = 30;
-            this.bunifuThinButton25.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(175)))), ((int)(((byte)(113)))));
-            this.bunifuThinButton25.ActiveForecolor = System.Drawing.Color.White;
-            this.bunifuThinButton25.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(175)))), ((int)(((byte)(113)))));
-            this.bunifuThinButton25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
-            this.bunifuThinButton25.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton25.BackgroundImage")));
-            this.bunifuThinButton25.ButtonText = "Ы";
-            this.bunifuThinButton25.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuTransition2.SetDecoration(this.bunifuThinButton25, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuTransition1.SetDecoration(this.bunifuThinButton25, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuThinButton25.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuThinButton25.ForeColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton25.IdleBorderThickness = 1;
-            this.bunifuThinButton25.IdleCornerRadius = 30;
-            this.bunifuThinButton25.IdleFillColor = System.Drawing.Color.White;
-            this.bunifuThinButton25.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(175)))), ((int)(((byte)(113)))));
-            this.bunifuThinButton25.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(175)))), ((int)(((byte)(113)))));
-            this.bunifuThinButton25.Location = new System.Drawing.Point(485, 5);
-            this.bunifuThinButton25.Margin = new System.Windows.Forms.Padding(5);
-            this.bunifuThinButton25.Name = "bunifuThinButton25";
-            this.bunifuThinButton25.Size = new System.Drawing.Size(37, 40);
-            this.bunifuThinButton25.TabIndex = 8;
-            this.bunifuThinButton25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuThinButton25.Click += new System.EventHandler(this.bunifuFlatButton2_Click);
+            this.profileTab2.AutoScroll = true;
+            this.profileTab2.BackColor = System.Drawing.Color.White;
+            this.bunifuTransition1.SetDecoration(this.profileTab2, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition2.SetDecoration(this.profileTab2, BunifuAnimatorNS.DecorationType.None);
+            this.profileTab2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.profileTab2.Location = new System.Drawing.Point(0, 0);
+            this.profileTab2.Name = "profileTab2";
+            this.profileTab2.Size = new System.Drawing.Size(600, 475);
+            this.profileTab2.TabIndex = 8;
             // 
             // Form2
             // 
@@ -749,11 +752,12 @@
         private ns1.BunifuThinButton2 bunifuThinButton24;
         private ns1.BunifuThinButton2 bunifuThinButton23;
         private ns1.BunifuThinButton2 bunifuThinButton22;
-        private Tabs.ProjectTab projectTab1;
+        private Tabs.ProjectListTab projectListTab1;
         private Tabs.SearchTab searchTab1;
         private Tabs.ActivityTab activityTab1;
-        private Tabs.ProfileTab profileTab1;
+        private Tabs.ProjectListTab profileTab1;
         private Tabs.CategoriesTab categoriesTab1;
-        private ns1.BunifuThinButton2 bunifuThinButton25;
+        private ProjectTab projectTab1;
+        private Tabs.ProfileTab profileTab2;
     }
 }
