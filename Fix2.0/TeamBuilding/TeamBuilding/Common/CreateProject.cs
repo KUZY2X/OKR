@@ -99,6 +99,10 @@ namespace TeamBuilding
             UserProfile.TB.Projects.Add(New_Project);
             if (ExistedProject != null)//якшо обновили - то нову ссилку для юзера
                 UserProfile.UsersList[UserProfile.SelectedUser].Projects1.Add(New_Project);
+            if (ExistedProject == null)
+            {
+                UserProfile.UsersList[UserProfile.SelectedUser].Projects1.Add(New_Project);
+            }
             //тово гівно треба для дебага
             try
             {
@@ -141,10 +145,6 @@ namespace TeamBuilding
             };
             New_Project.Users2.Clear();
             New_Project.Users2.Add(UserProfile.UsersList[UserProfile.SelectedUser]);
-            if (ExistedProject == null)
-            {
-                UserProfile.UsersList[UserProfile.SelectedUser].Projects1.Add(New_Project);
-            }
             if (File.Exists(openFileDialog1.FileName) || (ExistedProject!=null && ExistedProject.PrjtImagePath!=ImagePath))
             {
                 Image Img = new Bitmap(openFileDialog1.FileName);
