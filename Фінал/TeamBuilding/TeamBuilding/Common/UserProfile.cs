@@ -25,7 +25,7 @@ namespace TeamBuilding
 
     public partial class UserProfile : Form
     {
-        public TeamBuilding_Entities TB=new TeamBuilding_Entities();
+        public TeamBuilding2Entities TB =new TeamBuilding2Entities();
 
         //ссилочка на форму з створенням проекта, шоби юзер
         //міг вернутися до неї, якшо захоче....

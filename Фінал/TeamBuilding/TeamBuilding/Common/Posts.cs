@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Drawing;
 using System.Linq;
@@ -8,7 +9,8 @@ namespace TeamBuilding.Common
 {
     public partial class Posts : Form
     {
-        public TeamBuilding_Entities TB = new TeamBuilding_Entities();
+        public TeamBuilding2Entities TB = new TeamBuilding2Entities();
+       // public ObservableCollection<Users> UsersList = new ObservableCollection<Users>();
         public ObservableCollection<Projects> ProjectList = new ObservableCollection<Projects>();
 
         //public TeamBuildingEntities TB_NextForm = new TeamBuildingEntities();
@@ -27,21 +29,26 @@ namespace TeamBuilding.Common
             this.Width = 650;
             this.Height = 490;
             CreatePost();
+            this.AutoScroll = true;
 
         }
 
         public void CreatePost()
         {
-            //панель для скролу, яка є на задньому фоні
-            Panel back_basis = new Panel();
+            
+        //панель для скролу, яка є на задньому фоні
+        Panel back_basis = new Panel();
             back_basis.Name = "back_basis";
-            back_basis.BackColor = Color.Green;
+           // back_basis.BackColor = Color.Green;
             back_basis.Width = 640;
             back_basis.Height = 480;
             back_basis.AutoScroll = true;
 
             //створення постів
             var len = ProjectList.Count;
+
+
+   //         List<Button> buttons = new List<Button>();
             for (int j = 0; j <= len; j++)
             {
                 //інкремента на назви елеменітів
@@ -65,27 +72,33 @@ namespace TeamBuilding.Common
                 #region basicPanel
                 Panel basis = new Panel();
                 basis.Name = "basis" + i;
-                basis.BackColor = Color.Yellow;
-                basis.Location = new Point(10, j * 00);
+                basis.BackColor = Color.DimGray ;
+                basis.Location = new Point(10, j * 280);
                 basis.Size = new Size(610, 250);
+                #endregion
+
+               
+                #region descriptionProject
+                Label descriptionText = new Label();
+                descriptionText.Text = description;
+                //descriptionText.Location = new Point(basis.Left + 5, basis.Top + 10);
+                //descriptionText.Width = descriptionPanel.Width - 20;
+                //descriptionText.Height = descriptionPanel.Height - 20;
+                descriptionText.Left = basis.Left + 220 ;
+                descriptionText.Top = basis.Top + 40;
+                descriptionText.Size = new Size(370, 130);
+                descriptionText.BringToFront();
                 #endregion
 
                 #region decriptionPanel
                 Panel descriptionPanel = new Panel();
                 descriptionPanel.Name = "description" + i;
-                descriptionPanel.Left = basis.Left + 210;
-                descriptionPanel.Top = (basis.Top + 40);
-                descriptionPanel.BackColor = Color.CadetBlue;
-                descriptionPanel.Size = new Size(370, 150);
-                #endregion
-
-                #region descriptionProject
-                Label descriptionText = new Label();
-                descriptionText.Text = description;
-                descriptionText.Location = new Point(basis.Left, basis.Top + 40);
-                descriptionText.Width = descriptionPanel.Width - 20;
-                descriptionText.Height = descriptionPanel.Height - 20;
-                descriptionText.BringToFront();
+                descriptionPanel.Left = basis.Left + 220;
+                descriptionPanel.Top = basis.Top + 170;
+             //   descriptionPanel.Location = new Point(210, (j * 280));
+                descriptionPanel.BackColor = Color.Gray;
+                descriptionPanel.Size = new Size(370, 20);
+                descriptionPanel.SendToBack();
                 #endregion
 
                 #region imageToProject
@@ -97,8 +110,9 @@ namespace TeamBuilding.Common
                 header.Width = 180;
                 header.Height = 180;
                 header.TabStop = false;
+                header.Image = new Bitmap(@"..\..\Pictures\1.jpg");
+                //  header.Image = new Bitmap(@"..\..\Pictures\" + imagePath);
                 header.BackColor = Color.Red;
-                //   header.Image = Image.FromFile(ImagePath);
                 #endregion
 
                 #region information(CreateDate)
@@ -127,11 +141,25 @@ namespace TeamBuilding.Common
                 }
 
                 Button buttonLike = new Button();
-                buttonLike.Text = "Like" + " " + likeCount + "+";
+                //buttons.Add(buttonLike);
+                
+                buttonLike.Text = "Like" + " " + likeCount + "+";                
                 buttonLike.Size = new System.Drawing.Size(180, 41);
                 buttonLike.Left = (basis.Left + 10);
                 buttonLike.Top = (basis.Top + 200);
                 buttonLike.BackColor = Color.Blue;
+                buttonLike.Click+=  new EventHandler(delegate (Object o, EventArgs a)
+                {
+                    buttonLike.Text = "Like" + " " + (likeCount + 1).ToString();
+                    buttonLike.Enabled = false;
+                    buttonLike.BackColor = Color.Green;
+
+                    var Inc_likeCounter = TB.Projects.Where(c => c.PrjtId == idProject).FirstOrDefault();
+
+                    Inc_likeCounter.PjrtLikeCounter = ++likeCount;
+
+                    TB.SaveChanges();
+                });
 
                 Button buttonNext = new Button();
                 buttonNext.Text = "FullPost";
@@ -144,23 +172,26 @@ namespace TeamBuilding.Common
                 #endregion
 
                 #region addElementsOnControl
-                back_basis.Controls.Add(basis);
+               
+                //this.Controls.Add(back_basis);               
+               // this.Controls.Add(descriptionText);
 
-                basis.Controls.Add(descriptionPanel);
-                descriptionPanel.Controls.Add(descriptionText);
+                this.Controls.Add(descriptionPanel);
+                this.Controls.Add(descriptionText);
 
-                basis.Controls.Add(header);
-                basis.Controls.Add(information);
-                basis.Controls.Add(name);
+                this.Controls.Add(header);
+                this.Controls.Add(information);
+                this.Controls.Add(name);
 
-                basis.Controls.Add(buttonLike);
-                basis.Controls.Add(buttonNext);
-                this.Controls.Add(back_basis);
+                this.Controls.Add(buttonLike);
+                this.Controls.Add(buttonNext);
+                this.Controls.Add(basis);
                 #endregion
+
+                this.AutoScroll = true;
             }
         }
-
-        String needSkill;
+        
         private void Button_Click_Next(object sender, EventArgs e)
         {
             Form FullInformation = new Form();
@@ -171,13 +202,14 @@ namespace TeamBuilding.Common
             String needSkill = "";
             var kurva = returnTag(((Control)sender).Tag);
 
-            TeamBuilding_Entities TB_NextForm = new TeamBuilding_Entities();
+            TeamBuilding2Entities TB_NextForm = new TeamBuilding2Entities();
             var userName = TB_NextForm.Users.Where(u => u.UsrId == kurva.PrjtCreatedBy).ToList();
 
             //foreach (var i in TB.Projects.ToList()[kurva.PrjtId].Skills)
             {
                 //   needSkill += (i.SklName.ToString());
             }
+
 
             #region Elements
             PictureBox IgemagePost = new PictureBox();
@@ -189,6 +221,7 @@ namespace TeamBuilding.Common
             IgemagePost.Height = 180;
             IgemagePost.TabStop = false;
             IgemagePost.BackColor = Color.Red;
+            IgemagePost.Image = new Bitmap(@"..\..\Pictures\1.jpg");
             //IgemagePost.Image = Image.FromFile(kurva.PrjtImagePath.ToString());
 
             Panel HeaderPanel = new Panel();
@@ -266,7 +299,10 @@ namespace TeamBuilding.Common
             buttonClose.Left = (430);
             buttonClose.Top = (460);
             buttonClose.BackColor = Color.Red;
-            buttonClose.Click += new EventHandler(this.Button_Click_Close);
+            buttonClose.Click  += new EventHandler(delegate (Object o, EventArgs a)
+            {
+                FullInformation.Close();
+            });
             #endregion
 
             #region addElements
