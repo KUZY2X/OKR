@@ -55,15 +55,13 @@
             this.bunifuCustomLabel2 = new ns1.BunifuCustomLabel();
             this.loader = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.projectTab1 = new TeamBuilding.ProjectTab();
+            this.profileTab1 = new TeamBuilding.Tabs.ProfileTab();
             this.categoriesTab1 = new TeamBuilding.Tabs.CategoriesTab();
-            this.profileTab1 = new TeamBuilding.Tabs.ProjectListTab();
             this.activityTab1 = new TeamBuilding.Tabs.ActivityTab();
             this.searchTab1 = new TeamBuilding.Tabs.SearchTab();
             this.projectListTab1 = new TeamBuilding.Tabs.ProjectListTab();
             this.bunifuTransition1 = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.bunifuTransition2 = new BunifuAnimatorNS.BunifuTransition(this.components);
-            this.profileTab2 = new TeamBuilding.Tabs.ProfileTab();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
@@ -526,9 +524,9 @@
             this.bunifuCustomLabel2.ForeColor = System.Drawing.Color.Black;
             this.bunifuCustomLabel2.Location = new System.Drawing.Point(325, 0);
             this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
-            this.bunifuCustomLabel2.Size = new System.Drawing.Size(276, 21);
+            this.bunifuCustomLabel2.Size = new System.Drawing.Size(277, 21);
             this.bunifuCustomLabel2.TabIndex = 7;
-            this.bunifuCustomLabel2.Text = "2017 Volkov Andrii, Danyliv Roman";
+            this.bunifuCustomLabel2.Text = "2017 Volkov A., Danyliv R., Antal V.";
             // 
             // loader
             // 
@@ -546,10 +544,8 @@
             // 
             this.panel3.AutoScroll = true;
             this.panel3.AutoScrollMinSize = new System.Drawing.Size(5, 5);
-            this.panel3.Controls.Add(this.profileTab2);
-            this.panel3.Controls.Add(this.projectTab1);
-            this.panel3.Controls.Add(this.categoriesTab1);
             this.panel3.Controls.Add(this.profileTab1);
+            this.panel3.Controls.Add(this.categoriesTab1);
             this.panel3.Controls.Add(this.activityTab1);
             this.panel3.Controls.Add(this.searchTab1);
             this.panel3.Controls.Add(this.projectListTab1);
@@ -562,17 +558,18 @@
             this.panel3.Size = new System.Drawing.Size(600, 475);
             this.panel3.TabIndex = 4;
             // 
-            // projectTab1
+            // profileTab1
             // 
-            this.projectTab1.BackColor = System.Drawing.Color.White;
-            this.bunifuTransition1.SetDecoration(this.projectTab1, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuTransition2.SetDecoration(this.projectTab1, BunifuAnimatorNS.DecorationType.None);
-            this.projectTab1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.projectTab1.Location = new System.Drawing.Point(0, 0);
-            this.projectTab1.Name = "projectTab1";
-            this.projectTab1.Size = new System.Drawing.Size(600, 475);
-            this.projectTab1.TabIndex = 7;
-            this.projectTab1.Visible = false;
+            this.profileTab1.AutoScroll = true;
+            this.profileTab1.BackColor = System.Drawing.Color.White;
+            this.bunifuTransition1.SetDecoration(this.profileTab1, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition2.SetDecoration(this.profileTab1, BunifuAnimatorNS.DecorationType.None);
+            this.profileTab1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.profileTab1.Location = new System.Drawing.Point(0, 0);
+            this.profileTab1.Name = "profileTab1";
+            this.profileTab1.Size = new System.Drawing.Size(600, 475);
+            this.profileTab1.TabIndex = 7;
+            this.profileTab1.Visible = false;
             // 
             // categoriesTab1
             // 
@@ -586,20 +583,6 @@
             this.categoriesTab1.Size = new System.Drawing.Size(600, 475);
             this.categoriesTab1.TabIndex = 6;
             this.categoriesTab1.Visible = false;
-            // 
-            // profileTab1
-            // 
-            this.profileTab1.AutoScroll = true;
-            this.profileTab1.AutoScrollMinSize = new System.Drawing.Size(1, 1);
-            this.profileTab1.BackColor = System.Drawing.Color.White;
-            this.bunifuTransition1.SetDecoration(this.profileTab1, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuTransition2.SetDecoration(this.profileTab1, BunifuAnimatorNS.DecorationType.None);
-            this.profileTab1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.profileTab1.Location = new System.Drawing.Point(0, 0);
-            this.profileTab1.Name = "profileTab1";
-            this.profileTab1.Size = new System.Drawing.Size(600, 475);
-            this.profileTab1.TabIndex = 5;
-            this.profileTab1.Visible = false;
             // 
             // activityTab1
             // 
@@ -683,18 +666,6 @@
             animation1.TransparencyCoeff = 1F;
             this.bunifuTransition2.DefaultAnimation = animation1;
             // 
-            // profileTab2
-            // 
-            this.profileTab2.AutoScroll = true;
-            this.profileTab2.BackColor = System.Drawing.Color.White;
-            this.bunifuTransition1.SetDecoration(this.profileTab2, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuTransition2.SetDecoration(this.profileTab2, BunifuAnimatorNS.DecorationType.None);
-            this.profileTab2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.profileTab2.Location = new System.Drawing.Point(0, 0);
-            this.profileTab2.Name = "profileTab2";
-            this.profileTab2.Size = new System.Drawing.Size(600, 475);
-            this.profileTab2.TabIndex = 8;
-            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -755,9 +726,7 @@
         private Tabs.ProjectListTab projectListTab1;
         private Tabs.SearchTab searchTab1;
         private Tabs.ActivityTab activityTab1;
-        private Tabs.ProjectListTab profileTab1;
         private Tabs.CategoriesTab categoriesTab1;
-        private ProjectTab projectTab1;
-        private Tabs.ProfileTab profileTab2;
+        private Tabs.ProfileTab profileTab1;
     }
 }

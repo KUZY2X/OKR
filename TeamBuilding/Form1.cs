@@ -1,5 +1,7 @@
 ﻿using System;
-using System.Linq.Expressions;
+using System.Collections.ObjectModel;
+using System.Data.Entity;
+using System.Linq;
 using System.Net.Mail;
 using System.Windows.Forms;
 
@@ -9,11 +11,11 @@ namespace TeamBuilding
     {
         private const int MinimalLength = 6;
         private const int MaximalLength = 15;
-        private const string ErrorMessage = "Something is wrong";
+        public static int SelectedUser;
 
         public Form1()
         {
-            InitializeComponent();
+            InitializeComponent();  
         }
 
         private void bunifuThinButton22_Click(object sender, EventArgs e)
@@ -64,7 +66,6 @@ namespace TeamBuilding
             {
                 MessageBox.Show(exception.ToString());
             }
-
         }
 
         private void bunifuThinButton24_Click(object sender, EventArgs e)
@@ -74,18 +75,37 @@ namespace TeamBuilding
 
         private void bunifuThinButton23_Click(object sender, EventArgs e)
         {
+            var teamBuildingEntities = new TeamBuildingEntities();
+            var usersList = new ObservableCollection<Users>(teamBuildingEntities.Users);
+
             try
             {
                 if (!bunifuCustomLabel6.Visible && !bunifuCustomLabel9.Visible && !bunifuCustomLabel10.Visible
                     && bunifuMetroTextbox1.Text != "" && bunifuMetroTextbox2.Text != "" && bunifuMetroTextbox3.Text != "")
                 {
+                    Users user = new Users
+                    {
+                        UsrId = teamBuildingEntities.Users.Count() + 1,
+                        Name = bunifuMetroTextbox1.Text,
+                        RegMail = bunifuMetroTextbox2.Text,
+                        Password = bunifuMetroTextbox3.Text,
+                        PicturePath = "0.jpg",
+                        Registered = DateTime.Now
+                    };
+
+                    teamBuildingEntities.Users.Add(user);
+                    teamBuildingEntities.SaveChanges();
+                    SelectedUser = user.UsrId;
+
+                    MessageBox.Show("Sueccussfully registered");
+
                     var form2 = new Form2();
                     Hide();
                     form2.Show();
                 }
                 else
                 {
-                    MessageBox.Show(ErrorMessage);
+                    MessageBox.Show("Something is wrong");
                 }
             }
 
@@ -97,11 +117,25 @@ namespace TeamBuilding
 
         private void bunifuThinButton26_Click(object sender, EventArgs e)
         {
+            var teamBuildingEntities = new TeamBuildingEntities();
+            bool sueccessfullLogin = false;
+
             try
             {
-                var form2 = new Form2();
-                Hide();
-                form2.Show();
+                foreach (Users user in teamBuildingEntities.Users)
+                {
+                    if (bunifuMetroTextbox5.Text == user.RegMail && bunifuMetroTextbox4.Text == user.Password)
+                    {
+                        SelectedUser = user.UsrId;
+                        sueccessfullLogin = true;
+                        var form2 = new Form2();
+                        Hide();
+                        form2.Show();
+                    }
+                }
+
+                if (!sueccessfullLogin)
+                    MessageBox.Show("No such account found");
             }
 
             catch (Exception exception)

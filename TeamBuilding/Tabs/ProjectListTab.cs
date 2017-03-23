@@ -1,94 +1,112 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.ObjectModel;
 using System.Drawing;
 using System.Windows.Forms;
+using ns1;
 
 namespace TeamBuilding.Tabs
 {
     public partial class ProjectListTab : UserControl
     {
-        private List<People> _people;
-        private List<PictureBox> _pictureBoxes;
-        private readonly int _gap = 200;
-        private readonly int _width = 50;
-        private readonly int _height = 100;
-        private Bitmap _bitmap;
+        public TeamBuildingEntities TeamBuildingEntities = new TeamBuildingEntities();
+        public ObservableCollection<Projects> ProjectsList;
+
+        public int Counter = 0;
+        private bool Liked = false;
 
         public ProjectListTab()
         {
             InitializeComponent();
         }
 
-        public void CreatePlates()
+        public void ShowProjects()
         {
-            var counter = _people.Count;
-            var enter = 0;
-            var i = 1;
-
-            while (counter > 0)
+            try
             {
-                var pictureBox = new PictureBox
-                {
-                    Size = new Size(_width, _height),
-                    BorderStyle = BorderStyle.FixedSingle
-                };
+                ProjectsList = new ObservableCollection<Projects>(TeamBuildingEntities.Projects);
+                var chosenProject = ProjectsList[0];
+                var thinButtonY = 325;
+                var pictureBoxY = 75;
+                var separatorY = 375;
+                var customLabelY = 400;
+                var likeButtonY = 395;
 
-                if (_width + _gap * (i - 1) > ClientSize.Width)
+                for (int i = 0; i < ProjectsList.Count; i++)
                 {
-                    enter += _gap;
-                    i = 1;
+                    BunifuThinButton2 thinButton = new BunifuThinButton2 { Name = "thinButton" + i };
+                    chosenProject = ProjectsList[Counter];
+                    thinButton.ButtonText = chosenProject.PrjtName;
+                    thinButton.Size = new Size(655, 55);
+                    thinButton.IdleLineColor = Color.White;
+                    thinButton.IdleCornerRadius = 1;
+                    thinButton.IdleForecolor = Color.Black;
+                    thinButton.ActiveCornerRadius = 1;
+                    thinButton.ActiveFillColor = Color.White;
+                    thinButton.ActiveLineColor = Color.Black;
+                    thinButton.ActiveForecolor = Color.FromArgb(12, 185, 102);
+                    thinButton.TextAlign = ContentAlignment.MiddleLeft;
+                    thinButton.Location = new Point(50, thinButtonY);
+                    thinButtonY += 400;
+                    thinButton.Font = new Font("Century Gothic", 12);
+
+                    PictureBox pictureBox = new PictureBox();
+                    pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+                    pictureBox.Size = new Size(655, 250);
+                    pictureBox.Location = new Point(50, pictureBoxY);
+                    pictureBox.Image = new Bitmap(@"..\..\Pictures\default.jpg");
+                    pictureBoxY += 400;
+
+                    BunifuSeparator separator = new BunifuSeparator();
+                    separator.Size = new Size(655, 15);
+                    separator.LineColor = Color.FromArgb(12, 185, 102);
+                    separator.LineThickness = 3;
+                    separator.Location = new Point(50, separatorY);
+                    separatorY += 400;
+
+                    BunifuCustomLabel customLabel = new BunifuCustomLabel();
+                    customLabel.Font = new Font("Century Gothic", 12);
+                    customLabel.Text = "Likes: " + chosenProject.PjrtLikeCounter;
+                    customLabel.Location = new Point(50, customLabelY);
+                    customLabelY += 400;
+
+                    BunifuImageButton likeButton = new BunifuImageButton() { Name = "imageButton" + i };
+                    likeButton.Zoom = 15;
+                    likeButton.Size = new Size(30, 30);
+                    likeButton.BackColor = Color.Transparent;
+                    likeButton.SizeMode = PictureBoxSizeMode.StretchImage;
+                    likeButton.Image = bunifuImageButton2.Image;
+                    likeButton.Location = new Point(675, likeButtonY);
+                    likeButtonY += 400;
+                    likeButton.Click += new EventHandler(bunifuImageButton2_Click);
+
+                    Controls.Add(thinButton);
+                    Controls.Add(pictureBox);
+                    Controls.Add(separator);
+                    Controls.Add(customLabel);
+                    Controls.Add(likeButton);
+                    ++Counter;
                 }
+            }
 
-                pictureBox.Location = new Point(_width + _gap * (i - 1), _height + enter);
-
-                var bitMap = new Bitmap(pictureBox.Size.Width, pictureBox.Size.Height);
-                var graphics = Graphics.FromImage(bitMap);
-
-                graphics.DrawEllipse(Pens.Blue, bitMap.Width / 4, bitMap.Height / 4, bitMap.Width * 3 / 4, bitMap.Height * 3 / 4);
-                pictureBox.Image = bitMap;
-                _bitmap = bitMap;
-                pictureBox.Name = $"pb{_people.Count - counter + 1}";
-                Controls.Add(pictureBox);
-                _pictureBoxes.Add(pictureBox);
-
-                i++;
-                counter--;
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.ToString());
             }
         }
 
-        private void ProjectListTab_Load(object sender, System.EventArgs e)
+        private void bunifuImageButton2_Click(object sender, EventArgs e)
         {
-            _people = new List<People>();
-            _pictureBoxes = new List<PictureBox>();
+            BunifuImageButton button = sender as BunifuImageButton;
 
-            _people.Add(new People("KURWA1", 1, "KURWA1", _bitmap));
-            _people.Add(new People("KURWA2", 2, "KURWA2", _bitmap));
-            _people.Add(new People("KURWA3", 3, "KURWA3", _bitmap));
-            CreatePlates();
-
-            for (int i = 0; i < _people.Count; i++)
+            if (!Liked)
             {
-                _people[i].Image = new Bitmap(_pictureBoxes[i].Image);
+                button.Image = bunifuImageButton1.Image;
+                Liked = true;
             }
-
-            foreach (Control p in this.Controls)
+            else
             {
-                if (p is PictureBox)
-                    p.MouseClick += new MouseEventHandler(PictureBox_MouseClick);
-            }
-        }
-
-        public void PictureBox_MouseClick(object sender, MouseEventArgs e)
-        {
-            var c = (Control)sender;
-            for (int i = 0; i < _pictureBoxes.Count; i++)
-            {
-                if (_pictureBoxes[i].Name == c.Name)
-                {
-                    Form2._currentControl.Visible = false;
-                    Form2._projectControl = new ProjectTab(_people[i]);
-                    Form2._projectControl.Visible = true;
-                    Form2._currentControl = Form2._projectControl;
-                }
+                button.Image = bunifuImageButton2.Image;
+                Liked = false;
             }
         }
     }

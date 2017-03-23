@@ -26,6 +26,7 @@ namespace TeamBuilding
                 {"topright", Color.FromArgb(39, 50, 56)}
             };
 
+            projectListTab1.ShowProjects();
 
             _templates.Add(template);
             projectListTab1.Visible = true;
@@ -119,12 +120,13 @@ namespace TeamBuilding
         {
             try
             {
-                _projectControl = projectTab1;
-
                 _currentControl.Visible = false;
+                projectListTab1.Controls.Clear();
+                projectListTab1.ShowProjects();
                 projectListTab1.Visible = true;
                 _currentControl = projectListTab1;
                 Loading();
+                projectListTab1.Counter = 0;
             }
 
             catch (Exception exception)
@@ -138,9 +140,16 @@ namespace TeamBuilding
             try
             {
                 _currentControl.Visible = false;
+                categoriesTab1.Controls.Clear();
+                categoriesTab1.FillButtons(475, 85);
+                categoriesTab1.FillButtons(475, 235);
+                categoriesTab1.FillButtons(475, 385);
+                categoriesTab1.FillButtons(475, 535);
+                categoriesTab1.FillButtons(475, 685);
                 categoriesTab1.Visible = true;
                 _currentControl = categoriesTab1;
                 Loading();
+                categoriesTab1.Counter = 0;
             }
 
             catch (Exception exception)
@@ -154,6 +163,7 @@ namespace TeamBuilding
             try
             {
                 _currentControl.Visible = false;
+                activityTab1.LoadProjects(Form1.SelectedUser - 1);
                 activityTab1.Visible = true;
                 _currentControl = activityTab1;
                 Loading();
@@ -186,8 +196,10 @@ namespace TeamBuilding
             try
             {
                 _currentControl.Visible = false;
-                profileTab2.Visible = true;
-                _currentControl = profileTab2;
+                ProjectTab.Instance.Visible = false;
+                profileTab1.LoadUserData(Form1.SelectedUser - 1);
+                profileTab1.Visible = true;
+                _currentControl = profileTab1;
                 Loading();
             }
 

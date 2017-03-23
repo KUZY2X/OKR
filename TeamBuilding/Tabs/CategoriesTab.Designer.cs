@@ -34,11 +34,11 @@
             // bunifuCustomLabel1
             // 
             this.bunifuCustomLabel1.AutoSize = true;
-            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(50, 50);
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(300, 25);
             this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(161, 33);
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(110, 22);
             this.bunifuCustomLabel1.TabIndex = 7;
             this.bunifuCustomLabel1.Text = "Categories";
             // 
