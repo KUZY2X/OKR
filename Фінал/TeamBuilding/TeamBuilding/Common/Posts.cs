@@ -32,6 +32,7 @@ namespace TeamBuilding.Common
             this.AutoScroll = true;
 
         }
+        private int likeTriger = 0;
 
         public void CreatePost()
         {
@@ -142,7 +143,7 @@ namespace TeamBuilding.Common
 
                 Button buttonLike = new Button();
                 //buttons.Add(buttonLike);
-                
+      
                 buttonLike.Text = "Like" + " " + likeCount + "+";                
                 buttonLike.Size = new System.Drawing.Size(180, 41);
                 buttonLike.Left = (basis.Left + 10);
@@ -150,15 +151,33 @@ namespace TeamBuilding.Common
                 buttonLike.BackColor = Color.Blue;
                 buttonLike.Click+=  new EventHandler(delegate (Object o, EventArgs a)
                 {
-                    buttonLike.Text = "Like" + " " + (likeCount + 1).ToString();
-                    buttonLike.Enabled = false;
-                    buttonLike.BackColor = Color.Green;
+                    if (likeTriger == 0)
+                    {
+                        buttonLike.Text = "Like" + " " + (likeCount + 1).ToString() + " ";
 
-                    var Inc_likeCounter = TB.Projects.Where(c => c.PrjtId == idProject).FirstOrDefault();
+                        buttonLike.BackColor = Color.Green;
 
-                    Inc_likeCounter.PjrtLikeCounter = ++likeCount;
+                        var Inc_likeCounter = TB.Projects.Where(c => c.PrjtId == idProject).FirstOrDefault();
 
-                    TB.SaveChanges();
+                        Inc_likeCounter.PjrtLikeCounter = ++likeCount;
+
+                        TB.SaveChanges();
+
+                        likeTriger++;
+                    }
+                    else
+                    {
+                        buttonLike.Text = "Like" + " " + (likeCount - 1).ToString() + " ";
+                        buttonLike.BackColor = Color.OrangeRed;
+
+                        var Inc_likeCounter = TB.Projects.Where(c => c.PrjtId == idProject).FirstOrDefault();
+
+                        Inc_likeCounter.PjrtLikeCounter = --likeCount;
+
+                        TB.SaveChanges();
+
+                        likeTriger--;
+                    }
                 });
 
                 Button buttonNext = new Button();
