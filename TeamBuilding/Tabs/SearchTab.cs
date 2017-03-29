@@ -20,12 +20,11 @@ namespace TeamBuilding.Tabs
         public SearchTab()
         {
             InitializeComponent();
-            ProjectsList = new ObservableCollection<Projects>(TeamBuildingEntities.Projects);
-            lblcount = 0;
         }
-        
-        private void bunifuMaterialTextbox1_KeyUp(object sender, KeyEventArgs e)
+
+        private void bunifuMaterialTextbox1_KeyUp_1(object sender, KeyEventArgs e)
         {
+            ProjectsList = new ObservableCollection<Projects>(TeamBuildingEntities.Projects);
             var i = 0;
             for (int j = 0; j < lblcount; j++)
             {
@@ -51,7 +50,12 @@ namespace TeamBuilding.Tabs
                     Controls.Add(label);
                 }
             }
-            lblcount = i+1;
+            lblcount = i + 1;
+        }
+
+        private void SearchTab_Load_1(object sender, EventArgs e)
+        {
+            
         }
     }
 }
