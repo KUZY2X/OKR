@@ -12,6 +12,13 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+=======
+>>>>>>> 0fe1a52926726e58c3d1944c7f290c847d845902
+>>>>>>> master
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +31,14 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+<<<<<<< HEAD
     <IsWebBootstrapper>false</IsWebBootstrapper>
+=======
+<<<<<<< HEAD
+=======
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+>>>>>>> 0fe1a52926726e58c3d1944c7f290c847d845902
+>>>>>>> master
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -49,7 +63,15 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bunifu_UI_v1.52">
+<<<<<<< HEAD
       <HintPath>..\..\..\Documents\Bunifu_UI_v1.52.dll</HintPath>
+=======
+<<<<<<< HEAD
+      <HintPath>..\..\..\..\Bunifu_UI_v1.52.dll</HintPath>
+=======
+      <HintPath>..\..\..\Documents\Bunifu_UI_v1.52.dll</HintPath>
+>>>>>>> 0fe1a52926726e58c3d1944c7f290c847d845902
+>>>>>>> master
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
@@ -77,10 +99,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes.cs">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contacts.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+=======
+>>>>>>> master
       <DependentUpon>TeamBuilding.tt</DependentUpon>
     </Compile>
     <Compile Include="Contacts.cs">
       <DependentUpon>TeamBuilding.tt</DependentUpon>
+<<<<<<< HEAD
+=======
+>>>>>>> 0fe1a52926726e58c3d1944c7f290c847d845902
+>>>>>>> master
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -95,6 +130,34 @@
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
     <Compile Include="LikedProjects.cs">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="PrjtClasses.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Projects.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+=======
+>>>>>>> master
       <DependentUpon>TeamBuilding.tt</DependentUpon>
     </Compile>
     <Compile Include="PrjtClasses.cs">
@@ -104,11 +167,21 @@
     <Compile Include="Projects.cs">
       <DependentUpon>TeamBuilding.tt</DependentUpon>
     </Compile>
+<<<<<<< HEAD
+=======
+    <Compile Include="Requests.cs">
+      <DependentUpon>TeamBuilding.tt</DependentUpon>
+    </Compile>
+>>>>>>> master
     <Compile Include="SettingTab.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="SettingTab.Designer.cs">
       <DependentUpon>SettingTab.cs</DependentUpon>
+<<<<<<< HEAD
+=======
+>>>>>>> 0fe1a52926726e58c3d1944c7f290c847d845902
+>>>>>>> master
     </Compile>
     <Compile Include="ProjectTab.cs">
       <SubType>UserControl</SubType>
@@ -117,14 +190,32 @@
       <DependentUpon>ProjectTab.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+<<<<<<< HEAD
     <Compile Include="Requests.cs">
       <DependentUpon>TeamBuilding.tt</DependentUpon>
     </Compile>
     <Compile Include="Skills.cs">
+=======
+<<<<<<< HEAD
+    <Compile Include="Requests.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Skills.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+=======
+    <Compile Include="Skills.cs">
+>>>>>>> master
       <DependentUpon>TeamBuilding.tt</DependentUpon>
     </Compile>
     <Compile Include="sysdiagrams.cs">
       <DependentUpon>TeamBuilding.tt</DependentUpon>
+<<<<<<< HEAD
+=======
+>>>>>>> 0fe1a52926726e58c3d1944c7f290c847d845902
+>>>>>>> master
     </Compile>
     <Compile Include="Tabs\ActivityTab.cs">
       <SubType>UserControl</SubType>
@@ -156,6 +247,13 @@
     <Compile Include="Tabs\SearchTab.Designer.cs">
       <DependentUpon>SearchTab.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    <Compile Include="Users.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+=======
+>>>>>>> master
     <Compile Include="TeamBuilding.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -173,6 +271,10 @@
     </Compile>
     <Compile Include="Users.cs">
       <DependentUpon>TeamBuilding.tt</DependentUpon>
+<<<<<<< HEAD
+=======
+>>>>>>> 0fe1a52926726e58c3d1944c7f290c847d845902
+>>>>>>> master
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -180,9 +282,18 @@
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="SettingTab.resx">
       <DependentUpon>SettingTab.cs</DependentUpon>
     </EmbeddedResource>
+=======
+<<<<<<< HEAD
+=======
+    <EmbeddedResource Include="SettingTab.resx">
+      <DependentUpon>SettingTab.cs</DependentUpon>
+    </EmbeddedResource>
+>>>>>>> 0fe1a52926726e58c3d1944c7f290c847d845902
+>>>>>>> master
     <EmbeddedResource Include="ProjectTab.resx">
       <DependentUpon>ProjectTab.cs</DependentUpon>
     </EmbeddedResource>
@@ -211,6 +322,19 @@
       <DependentUpon>SearchTab.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    <EntityDeploy Include="Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </None>
+=======
+>>>>>>> 0fe1a52926726e58c3d1944c7f290c847d845902
+>>>>>>> master
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -221,6 +345,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> master
     <EntityDeploy Include="TeamBuilding.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>TeamBuilding.Designer.cs</LastGenOutput>
@@ -228,6 +357,10 @@
     <None Include="TeamBuilding.edmx.diagram">
       <DependentUpon>TeamBuilding.edmx</DependentUpon>
     </None>
+<<<<<<< HEAD
+=======
+>>>>>>> 0fe1a52926726e58c3d1944c7f290c847d845902
+>>>>>>> master
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -248,6 +381,27 @@
     <Folder Include="Pictures\" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    <Content Include="Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="TeamBuilding.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TeamBuilding_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>TeamBuilding.mdf</DependentUpon>
+=======
+>>>>>>> master
     <Content Include="TeamBuilding.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>TeamBuilding.edmx</DependentUpon>
@@ -257,6 +411,10 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>TeamBuilding.edmx</DependentUpon>
       <LastGenOutput>TeamBuilding.cs</LastGenOutput>
+<<<<<<< HEAD
+=======
+>>>>>>> 0fe1a52926726e58c3d1944c7f290c847d845902
+>>>>>>> master
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,0 +1,6 @@
+cd D:/Laboratorni/OKR
+git init
+git add .
+git status
+git commit -m "test"
+git remote add origin https://github.com/KUZY2X/OKR.git

@@ -61,7 +61,14 @@
             this.bunifuImageButton2.TabStop = false;
             this.bunifuImageButton2.Visible = false;
             this.bunifuImageButton2.Zoom = 15;
+<<<<<<< HEAD
             this.bunifuImageButton2.Click += new System.EventHandler(this.bunifuImageButton2_Click);
+=======
+<<<<<<< HEAD
+            this.bunifuImageButton2.Click += new System.EventHandler(this.bunifuImageButton2_Click);
+=======
+>>>>>>> 0fe1a52926726e58c3d1944c7f290c847d845902
+>>>>>>> master
             // 
             // bunifuImageButton1
             // 
@@ -90,6 +97,13 @@
             this.Controls.Add(this.bunifuCustomLabel1);
             this.Name = "ProjectListTab";
             this.Size = new System.Drawing.Size(700, 983);
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+            this.Load += new System.EventHandler(this.ProjectListTab_Load);
+>>>>>>> 0fe1a52926726e58c3d1944c7f290c847d845902
+>>>>>>> master
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             this.ResumeLayout(false);

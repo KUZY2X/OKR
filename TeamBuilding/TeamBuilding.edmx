@@ -4,7 +4,11 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
+<<<<<<< HEAD
       <Schema Namespace="TeamBuildingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+=======
+      <Schema Namespace="TeamBuilding4Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+>>>>>>> master
         <EntityType Name="Classes">
           <Key>
             <PropertyRef Name="ClassId" />
@@ -42,6 +46,10 @@
         <EntityType Name="LikedProjects">
           <Key>
             <PropertyRef Name="LkdUserId" />
+<<<<<<< HEAD
+=======
+            <PropertyRef Name="LkdPrjtId" />
+>>>>>>> master
           </Key>
           <Property Name="LkdUserId" Type="int" Nullable="false" />
           <Property Name="LkdPrjtId" Type="int" Nullable="false" />
@@ -277,6 +285,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+<<<<<<< HEAD
         <Association Name="FK_Users_LikedProjects1">
           <End Role="LikedProjects" Type="Self.LikedProjects" Multiplicity="0..1" />
           <End Role="Users" Type="Self.Users" Multiplicity="*" />
@@ -289,6 +298,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+=======
+>>>>>>> master
         <Association Name="FK_Users_Requests">
           <End Role="Requests" Type="Self.Requests" Multiplicity="0..1" />
           <End Role="Users" Type="Self.Users" Multiplicity="*" />
@@ -325,7 +336,42 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+<<<<<<< HEAD
         <EntityContainer Name="TeamBuildingModelStoreContainer">
+=======
+        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="TeamBuilding4ModelStoreContainer">
+>>>>>>> master
           <EntitySet Name="Classes" EntityType="Self.Classes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Contacts" EntityType="Self.Contacts" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CreatedPrjts" EntityType="Self.CreatedPrjts" Schema="dbo" store:Type="Tables" />
@@ -388,10 +434,13 @@
             <End Role="Contacts" EntitySet="Contacts" />
             <End Role="Users" EntitySet="Users" />
           </AssociationSet>
+<<<<<<< HEAD
           <AssociationSet Name="FK_Users_LikedProjects1" Association="Self.FK_Users_LikedProjects1">
             <End Role="LikedProjects" EntitySet="LikedProjects" />
             <End Role="Users" EntitySet="Users" />
           </AssociationSet>
+=======
+>>>>>>> master
           <AssociationSet Name="FK_Users_Requests" Association="Self.FK_Users_Requests">
             <End Role="Requests" EntitySet="Requests" />
             <End Role="Users" EntitySet="Users" />
@@ -409,7 +458,11 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
+<<<<<<< HEAD
       <Schema Namespace="TeamBuildingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+=======
+      <Schema Namespace="TeamBuilding4Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+>>>>>>> master
         <EntityType Name="Classes">
           <Key>
             <PropertyRef Name="ClassId" />
@@ -434,10 +487,17 @@
         <EntityType Name="LikedProjects">
           <Key>
             <PropertyRef Name="LkdUserId" />
+<<<<<<< HEAD
           </Key>
           <Property Name="LkdUserId" Type="Int32" Nullable="false" />
           <Property Name="LkdPrjtId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Users" Relationship="Self.FK_Users_LikedProjects1" FromRole="LikedProjects" ToRole="Users" />
+=======
+            <PropertyRef Name="LkdPrjtId" />
+          </Key>
+          <Property Name="LkdUserId" Type="Int32" Nullable="false" />
+          <Property Name="LkdPrjtId" Type="Int32" Nullable="false" />
+>>>>>>> master
         </EntityType>
         <EntityType Name="PrjtClasses">
           <Key>
@@ -512,7 +572,10 @@
           <Property Name="RequetId" Type="Int32" />
           <Property Name="LikedPrjtId" Type="Int32" />
           <NavigationProperty Name="Contacts" Relationship="Self.FK_Users_Contacts" FromRole="Users" ToRole="Contacts" />
+<<<<<<< HEAD
           <NavigationProperty Name="LikedProjects" Relationship="Self.FK_Users_LikedProjects1" FromRole="Users" ToRole="LikedProjects" />
+=======
+>>>>>>> master
           <NavigationProperty Name="Projects" Relationship="Self.FK_Projects_Users" FromRole="Users" ToRole="Projects" />
           <NavigationProperty Name="Requests" Relationship="Self.FK_Users_Requests" FromRole="Users" ToRole="Requests" />
           <NavigationProperty Name="Projects1" Relationship="Self.CreatedPrjts" FromRole="Users" ToRole="Projects" />
@@ -544,6 +607,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+<<<<<<< HEAD
         <Association Name="FK_Users_LikedProjects1">
           <End Role="LikedProjects" Type="Self.LikedProjects" Multiplicity="0..1" />
           <End Role="Users" Type="Self.Users" Multiplicity="*" />
@@ -556,6 +620,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+=======
+>>>>>>> master
         <Association Name="FK_PrjtClasses_Projects">
           <End Role="Projects" Type="Self.Projects" Multiplicity="1" />
           <End Role="PrjtClasses" Type="Self.PrjtClasses" Multiplicity="*" />
@@ -630,10 +696,13 @@
             <End Role="Contacts" EntitySet="Contacts" />
             <End Role="Users" EntitySet="Users" />
           </AssociationSet>
+<<<<<<< HEAD
           <AssociationSet Name="FK_Users_LikedProjects1" Association="Self.FK_Users_LikedProjects1">
             <End Role="LikedProjects" EntitySet="LikedProjects" />
             <End Role="Users" EntitySet="Users" />
           </AssociationSet>
+=======
+>>>>>>> master
           <AssociationSet Name="FK_PrjtClasses_Projects" Association="Self.FK_PrjtClasses_Projects">
             <End Role="Projects" EntitySet="Projects" />
             <End Role="PrjtClasses" EntitySet="PrjtClasses" />
@@ -666,15 +735,54 @@
             <End Role="Skills" EntitySet="Skills" />
             <End Role="Users" EntitySet="Users" />
           </AssociationSet>
+<<<<<<< HEAD
+=======
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
+>>>>>>> master
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+<<<<<<< HEAD
         <EntityContainerMapping StorageEntityContainer="TeamBuildingModelStoreContainer" CdmEntityContainer="TeamBuildingEntities">
           <EntitySetMapping Name="Classes">
             <EntityTypeMapping TypeName="TeamBuildingModel.Classes">
+=======
+        <EntityContainerMapping StorageEntityContainer="TeamBuilding4ModelStoreContainer" CdmEntityContainer="TeamBuildingEntities">
+          <EntitySetMapping Name="Classes">
+            <EntityTypeMapping TypeName="TeamBuilding4Model.Classes">
+>>>>>>> master
               <MappingFragment StoreEntitySet="Classes">
                 <ScalarProperty Name="ClassId" ColumnName="ClassId" />
                 <ScalarProperty Name="ClassName" ColumnName="ClassName" />
@@ -682,7 +790,11 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Contacts">
+<<<<<<< HEAD
             <EntityTypeMapping TypeName="TeamBuildingModel.Contacts">
+=======
+            <EntityTypeMapping TypeName="TeamBuilding4Model.Contacts">
+>>>>>>> master
               <MappingFragment StoreEntitySet="Contacts">
                 <ScalarProperty Name="CntId" ColumnName="CntId" />
                 <ScalarProperty Name="PhoneNum" ColumnName="PhoneNum" />
@@ -694,7 +806,11 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="LikedProjects">
+<<<<<<< HEAD
             <EntityTypeMapping TypeName="TeamBuildingModel.LikedProjects">
+=======
+            <EntityTypeMapping TypeName="TeamBuilding4Model.LikedProjects">
+>>>>>>> master
               <MappingFragment StoreEntitySet="LikedProjects">
                 <ScalarProperty Name="LkdUserId" ColumnName="LkdUserId" />
                 <ScalarProperty Name="LkdPrjtId" ColumnName="LkdPrjtId" />
@@ -702,7 +818,11 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="PrjtClasses">
+<<<<<<< HEAD
             <EntityTypeMapping TypeName="TeamBuildingModel.PrjtClasses">
+=======
+            <EntityTypeMapping TypeName="TeamBuilding4Model.PrjtClasses">
+>>>>>>> master
               <MappingFragment StoreEntitySet="PrjtClasses">
                 <ScalarProperty Name="ClPrjtId" ColumnName="ClPrjtId" />
                 <ScalarProperty Name="ClClassId" ColumnName="ClClassId" />
@@ -711,7 +831,11 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Projects">
+<<<<<<< HEAD
             <EntityTypeMapping TypeName="TeamBuildingModel.Projects">
+=======
+            <EntityTypeMapping TypeName="TeamBuilding4Model.Projects">
+>>>>>>> master
               <MappingFragment StoreEntitySet="Projects">
                 <ScalarProperty Name="PrjtId" ColumnName="PrjtId" />
                 <ScalarProperty Name="PrjtName" ColumnName="PrjtName" />
@@ -724,7 +848,11 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Requests">
+<<<<<<< HEAD
             <EntityTypeMapping TypeName="TeamBuildingModel.Requests">
+=======
+            <EntityTypeMapping TypeName="TeamBuilding4Model.Requests">
+>>>>>>> master
               <MappingFragment StoreEntitySet="Requests">
                 <ScalarProperty Name="ReqUsrId" ColumnName="ReqUsrId" />
                 <ScalarProperty Name="ReqPrjtId" ColumnName="ReqPrjtId" />
@@ -734,7 +862,11 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Skills">
+<<<<<<< HEAD
             <EntityTypeMapping TypeName="TeamBuildingModel.Skills">
+=======
+            <EntityTypeMapping TypeName="TeamBuilding4Model.Skills">
+>>>>>>> master
               <MappingFragment StoreEntitySet="Skills">
                 <ScalarProperty Name="SklId" ColumnName="SklId" />
                 <ScalarProperty Name="SklName" ColumnName="SklName" />
@@ -742,7 +874,11 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
+<<<<<<< HEAD
             <EntityTypeMapping TypeName="TeamBuildingModel.sysdiagrams">
+=======
+            <EntityTypeMapping TypeName="TeamBuilding4Model.sysdiagrams">
+>>>>>>> master
               <MappingFragment StoreEntitySet="sysdiagrams">
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="principal_id" ColumnName="principal_id" />
@@ -753,7 +889,11 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Users">
+<<<<<<< HEAD
             <EntityTypeMapping TypeName="TeamBuildingModel.Users">
+=======
+            <EntityTypeMapping TypeName="TeamBuilding4Model.Users">
+>>>>>>> master
               <MappingFragment StoreEntitySet="Users">
                 <ScalarProperty Name="UsrId" ColumnName="UsrId" />
                 <ScalarProperty Name="Login" ColumnName="Login" />
@@ -769,7 +909,11 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+<<<<<<< HEAD
           <AssociationSetMapping Name="CreatedPrjts" TypeName="TeamBuildingModel.CreatedPrjts" StoreEntitySet="CreatedPrjts">
+=======
+          <AssociationSetMapping Name="CreatedPrjts" TypeName="TeamBuilding4Model.CreatedPrjts" StoreEntitySet="CreatedPrjts">
+>>>>>>> master
             <EndProperty Name="Projects">
               <ScalarProperty Name="PrjtId" ColumnName="CrtProjectId" />
             </EndProperty>
@@ -777,7 +921,11 @@
               <ScalarProperty Name="UsrId" ColumnName="CrtUserId" />
             </EndProperty>
           </AssociationSetMapping>
+<<<<<<< HEAD
           <AssociationSetMapping Name="InProjects" TypeName="TeamBuildingModel.InProjects" StoreEntitySet="InProjects">
+=======
+          <AssociationSetMapping Name="InProjects" TypeName="TeamBuilding4Model.InProjects" StoreEntitySet="InProjects">
+>>>>>>> master
             <EndProperty Name="Projects">
               <ScalarProperty Name="PrjtId" ColumnName="InProjectId" />
             </EndProperty>
@@ -785,7 +933,11 @@
               <ScalarProperty Name="UsrId" ColumnName="InUserId" />
             </EndProperty>
           </AssociationSetMapping>
+<<<<<<< HEAD
           <AssociationSetMapping Name="PrjtSkills" TypeName="TeamBuildingModel.PrjtSkills" StoreEntitySet="PrjtSkills">
+=======
+          <AssociationSetMapping Name="PrjtSkills" TypeName="TeamBuilding4Model.PrjtSkills" StoreEntitySet="PrjtSkills">
+>>>>>>> master
             <EndProperty Name="Projects">
               <ScalarProperty Name="PrjtId" ColumnName="SkPrjtId" />
             </EndProperty>
@@ -793,7 +945,11 @@
               <ScalarProperty Name="SklId" ColumnName="SkSkillId" />
             </EndProperty>
           </AssociationSetMapping>
+<<<<<<< HEAD
           <AssociationSetMapping Name="UserClasses" TypeName="TeamBuildingModel.UserClasses" StoreEntitySet="UserClasses">
+=======
+          <AssociationSetMapping Name="UserClasses" TypeName="TeamBuilding4Model.UserClasses" StoreEntitySet="UserClasses">
+>>>>>>> master
             <EndProperty Name="Classes">
               <ScalarProperty Name="ClassId" ColumnName="ClClassId" />
             </EndProperty>
@@ -801,7 +957,11 @@
               <ScalarProperty Name="UsrId" ColumnName="ClUserId" />
             </EndProperty>
           </AssociationSetMapping>
+<<<<<<< HEAD
           <AssociationSetMapping Name="UsrSkills" TypeName="TeamBuildingModel.UsrSkills" StoreEntitySet="UsrSkills">
+=======
+          <AssociationSetMapping Name="UsrSkills" TypeName="TeamBuilding4Model.UsrSkills" StoreEntitySet="UsrSkills">
+>>>>>>> master
             <EndProperty Name="Skills">
               <ScalarProperty Name="SklId" ColumnName="SkSkillId" />
             </EndProperty>
@@ -809,6 +969,16 @@
               <ScalarProperty Name="UsrId" ColumnName="SkUserId" />
             </EndProperty>
           </AssociationSetMapping>
+<<<<<<< HEAD
+=======
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="TeamBuilding4Model.Store.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="TeamBuilding4Model.Store.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="TeamBuilding4Model.Store.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="TeamBuilding4Model.Store.sp_helpdiagramdefinition" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="TeamBuilding4Model.Store.sp_helpdiagrams" />
+          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="TeamBuilding4Model.Store.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="TeamBuilding4Model.Store.sp_upgraddiagrams" />
+>>>>>>> master
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

@@ -49,6 +49,10 @@
             this.bunifuMaterialTextbox1.Size = new System.Drawing.Size(370, 44);
             this.bunifuMaterialTextbox1.TabIndex = 0;
             this.bunifuMaterialTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+<<<<<<< HEAD
+=======
+            this.bunifuMaterialTextbox1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.bunifuMaterialTextbox1_KeyUp_1);
+>>>>>>> master
             // 
             // SearchTab
             // 
@@ -59,6 +63,10 @@
             this.Controls.Add(this.bunifuMaterialTextbox1);
             this.Name = "SearchTab";
             this.Size = new System.Drawing.Size(700, 1000);
+<<<<<<< HEAD
+=======
+            this.Load += new System.EventHandler(this.SearchTab_Load_1);
+>>>>>>> master
             this.ResumeLayout(false);
 
         }

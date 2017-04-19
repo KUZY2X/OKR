@@ -64,6 +64,11 @@ namespace TeamBuilding.Tabs
             ProjectTab.Instance.Dock = DockStyle.Fill;
             ProjectTab.Instance.BringToFront();
         }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> master
 
         private void bunifuThinButton22_Click(object sender, EventArgs e)
         {
@@ -73,5 +78,9 @@ namespace TeamBuilding.Tabs
             SettingTab.Instance.Dock = DockStyle.Fill;
             SettingTab.Instance.BringToFront();
         }
+<<<<<<< HEAD
+=======
+>>>>>>> 0fe1a52926726e58c3d1944c7f290c847d845902
+>>>>>>> master
     }
 }

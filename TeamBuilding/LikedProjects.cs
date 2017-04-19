@@ -14,6 +14,10 @@ namespace TeamBuilding
     
     public partial class LikedProjects
     {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> master
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public LikedProjects()
         {
@@ -25,5 +29,12 @@ namespace TeamBuilding
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Users> Users { get; set; }
+<<<<<<< HEAD
+=======
+=======
+        public int LkdUserId { get; set; }
+        public int LkdPrjtId { get; set; }
+>>>>>>> 0fe1a52926726e58c3d1944c7f290c847d845902
+>>>>>>> master
     }
 }
