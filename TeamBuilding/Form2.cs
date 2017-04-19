@@ -122,12 +122,19 @@ namespace TeamBuilding
             {
                 _currentControl.Visible = false;
                 projectListTab1.Controls.Clear();
+<<<<<<< HEAD
                 projectListTab1.Counter = 0;
+=======
+>>>>>>> 0fe1a52926726e58c3d1944c7f290c847d845902
                 projectListTab1.ShowProjects();
                 projectListTab1.Visible = true;
                 _currentControl = projectListTab1;
                 Loading();
+<<<<<<< HEAD
                 
+=======
+                projectListTab1.Counter = 0;
+>>>>>>> 0fe1a52926726e58c3d1944c7f290c847d845902
             }
 
             catch (Exception exception)

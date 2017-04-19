@@ -10,7 +10,11 @@ namespace TeamBuilding.Tabs
     {
         public TeamBuildingEntities TeamBuildingEntities = new TeamBuildingEntities();
         public ObservableCollection<Users> UsersList = new ObservableCollection<Users>();
+<<<<<<< HEAD
         public ObservableCollection<LikedProjects> LikedProjects = new ObservableCollection<LikedProjects>();
+=======
+        public ObservableCollection<LikedProjects> likePrjcList = new ObservableCollection<LikedProjects>();
+>>>>>>> 0fe1a52926726e58c3d1944c7f290c847d845902
 
         private List<ListBox> ListBoxes;
         private int selectedUser = Form1.SelectedUser - 1;
@@ -27,11 +31,21 @@ namespace TeamBuilding.Tabs
             UsersList = new ObservableCollection<Users>(TeamBuildingEntities.Users);
             var chosenUser = UsersList[selected];
             ListBoxes = new List<ListBox>();
+<<<<<<< HEAD
+=======
+            var tempuserId = chosenUser.UsrId;
+            likePrjcList = new ObservableCollection<LikedProjects>(TeamBuildingEntities.LikedProjects.Where(c => c.LkdUserId == tempuserId));
+
+>>>>>>> 0fe1a52926726e58c3d1944c7f290c847d845902
 
             foreach (var control in Controls)
             {
                 if (control is ListBox)
+<<<<<<< HEAD
                     ListBoxes.Add((ListBox) control);
+=======
+                ListBoxes.Add((ListBox) control);
+>>>>>>> 0fe1a52926726e58c3d1944c7f290c847d845902
             }
 
             foreach (var listBox in ListBoxes)
@@ -50,12 +64,32 @@ namespace TeamBuilding.Tabs
                 {
                     listBox2.Items.Add(project.PrjtName);
                 }
+<<<<<<< HEAD
             }
 
             catch (Exception exception)
             {
                 MessageBox.Show(exception.ToString());
             }
+=======
+
+                foreach (var like in likePrjcList)
+                {
+
+                    var tempProject = TeamBuildingEntities.Projects.Where(c => c.PrjtId == like.LkdPrjtId).FirstOrDefault();
+                    listBox3.Items.Add(tempProject.PrjtName);
+
+                }
+
+            }
+
+           catch (Exception exception)
+            {
+                MessageBox.Show(exception.ToString());
+            }
+
+
+>>>>>>> 0fe1a52926726e58c3d1944c7f290c847d845902
         }
 
         private void bunifuThinButton21_Click(object sender, EventArgs e)
@@ -63,7 +97,11 @@ namespace TeamBuilding.Tabs
             try
             {
                 TeamBuildingEntities.Users.ToList()[selectedUser].Projects2.Remove(
+<<<<<<< HEAD
                     UsersList[selectedUser].Projects2.ToList()[listBox1.SelectedIndex]);
+=======
+                UsersList[selectedUser].Projects2.ToList()[listBox1.SelectedIndex]);
+>>>>>>> 0fe1a52926726e58c3d1944c7f290c847d845902
                 TeamBuildingEntities.SaveChanges();
                 LoadProjects(selectedUser);
             }
@@ -106,5 +144,59 @@ namespace TeamBuilding.Tabs
                 MessageBox.Show("Choose a project");
             }
         }
+<<<<<<< HEAD
+=======
+
+        private void bunifuThinButton25_Click(object sender, EventArgs e)
+        {
+
+            UsersList = new ObservableCollection<Users>(TeamBuildingEntities.Users);
+            var chosenUser = UsersList[selectedUser];
+            var tempuserId = chosenUser.UsrId;
+
+            try
+            {
+            var tempProjectId = TeamBuildingEntities.Projects.Where(c => c.PrjtName == listBox3.SelectedItem).FirstOrDefault();
+            var tempId = tempProjectId.PrjtId;
+
+            var likeInProject = TeamBuildingEntities.Projects.Where(c => c.PrjtId == tempId).FirstOrDefault();
+            int countLike = (int)likeInProject.PjrtLikeCounter;
+            countLike--;
+            likeInProject.PjrtLikeCounter = countLike;
+
+            var delLike = TeamBuildingEntities.LikedProjects.Where(c => c.LkdPrjtId == tempProjectId.PrjtId && c.LkdUserId == tempuserId).FirstOrDefault();
+
+          //   TeamBuildingEntities.LikedProjects.Attach(delLike);
+               TeamBuildingEntities.LikedProjects.Remove(delLike);
+                
+               listBox3.Items.Clear();
+
+               TeamBuildingEntities.SaveChanges();
+            }
+            catch (Exception exception)
+                {
+                    MessageBox.Show("Choose unlike element");
+                    listBox3.Items.Clear();
+            }
+
+            likePrjcList = new ObservableCollection<LikedProjects>(TeamBuildingEntities.LikedProjects.Where(c => c.LkdUserId == tempuserId));
+
+            if (likePrjcList != null)
+            {
+                try
+                {
+                    foreach (var like in likePrjcList)
+                    {
+                        var tempProject = TeamBuildingEntities.Projects.Where(c => c.PrjtId == like.LkdPrjtId).FirstOrDefault();
+                        listBox3.Items.Add(tempProject.PrjtName);
+                    }
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show(exception.ToString());
+                }
+            }
+        }
+>>>>>>> 0fe1a52926726e58c3d1944c7f290c847d845902
     }
 }

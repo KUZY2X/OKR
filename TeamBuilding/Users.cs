@@ -25,7 +25,13 @@ namespace TeamBuilding
         }
     
         public int UsrId { get; set; }
+<<<<<<< HEAD
         public string Name { get; set; }
+=======
+        public string Login { get; set; }
+        public string Name { get; set; }
+        public string LastName { get; set; }
+>>>>>>> 0fe1a52926726e58c3d1944c7f290c847d845902
         public string RegMail { get; set; }
         public string Password { get; set; }
         public string PicturePath { get; set; }
@@ -35,7 +41,10 @@ namespace TeamBuilding
         public Nullable<int> LikedPrjtId { get; set; }
     
         public virtual Contacts Contacts { get; set; }
+<<<<<<< HEAD
         public virtual LikedProjects LikedProjects { get; set; }
+=======
+>>>>>>> 0fe1a52926726e58c3d1944c7f290c847d845902
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Projects> Projects { get; set; }
         public virtual Requests Requests { get; set; }

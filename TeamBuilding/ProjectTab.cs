@@ -1,4 +1,8 @@
 ﻿using System;
+<<<<<<< HEAD
+=======
+using System.Collections.Generic;
+>>>>>>> 0fe1a52926726e58c3d1944c7f290c847d845902
 using System.Collections.ObjectModel;
 using System.Data.Entity.Validation;
 using System.Drawing;
@@ -140,6 +144,10 @@ namespace TeamBuilding
             if (bunifuMaterialTextbox1.Text != "")
             {
                 listBox1.Items.Add(bunifuMaterialTextbox1.Text);
+<<<<<<< HEAD
+=======
+                bunifuMaterialTextbox1.Text = "";
+>>>>>>> 0fe1a52926726e58c3d1944c7f290c847d845902
             }
             else
             {
@@ -152,7 +160,11 @@ namespace TeamBuilding
             try
             {
                 UsersList = new ObservableCollection<Users>(TeamBuildingEntities.Users);
+<<<<<<< HEAD
                
+=======
+
+>>>>>>> 0fe1a52926726e58c3d1944c7f290c847d845902
                 int projectId;
                 if (ExistedProject == null)
                 {
@@ -197,7 +209,30 @@ namespace TeamBuilding
                 }
 
                 for (int i = 0; i < listBox1.Items.Count; i++)
+<<<<<<< HEAD
                     _newProject.Skills.Add(TeamBuildingEntities.Skills.ToList()[i]);
+=======
+                {
+                    Skills skill;
+                    var check = TeamBuildingEntities.Skills.ToList().Where(k => k.SklName == listBox1.Items[i].ToString());
+                    if (check.ToList().Count > 0)
+                    {
+                        _newProject.Skills.Add(check.ToList()[0]);
+                    }
+                    else
+                    {
+                        TeamBuildingEntities.Skills.Add(new Skills()
+                        {
+                            Projects = new List<Projects>(),
+                            SklId = TeamBuildingEntities.Skills.Count() + 1,
+                            SklName = listBox1.Items[i].ToString(),
+                            Users = new List<Users>()
+                        });
+                        TeamBuildingEntities.SaveChanges();
+                        _newProject.Skills.Add(TeamBuildingEntities.Skills.ToList().Last());
+                    }
+                }
+>>>>>>> 0fe1a52926726e58c3d1944c7f290c847d845902
 
                 for (int i = 0; i < checkedListBox1.Items.Count; i++)
                     if (checkedListBox1.GetItemChecked(i))
@@ -221,6 +256,7 @@ namespace TeamBuilding
 
         private void CreateOrUpdate(Projects newProject)
         {
+<<<<<<< HEAD
             try
             {
                 if (ExistedProject != null)
@@ -256,6 +292,41 @@ namespace TeamBuilding
             catch (Exception exception)
             {
                 MessageBox.Show(exception.ToString());
+=======
+            if (ExistedProject != null)//якшо обновляєм - то старий видаляєм
+                TeamBuildingEntities.Projects.Remove(ExistedProject);
+            TeamBuildingEntities.Projects.Add(newProject);
+            if (ExistedProject != null)//якшо обновили - то нову ссилку для юзера
+                UsersList[Form1.SelectedUser - 1].Projects1.Add(newProject);
+            if (ExistedProject == null)
+            {
+                UsersList[Form1.SelectedUser - 1].Projects1.Add(newProject);
+            }
+            //тово гівно треба для дебага
+            try
+            {
+                TeamBuildingEntities.SaveChanges();
+            }
+            catch (DbEntityValidationException dbEx)
+            {
+                foreach (var validationErrors in dbEx.EntityValidationErrors)
+                {
+                    foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        MessageBox.Show(validationError.PropertyName +
+                                        validationError.ErrorMessage);
+                    }
+                }
+            }
+        }
+
+        private void bunifuThinButton25_Click(object sender, EventArgs e)
+        {
+            if (listBox1.SelectedIndex > -1)
+            {
+                listBox1.Items.RemoveAt(listBox1.SelectedIndex);
+                listBox1.SelectedIndex = -1;
+>>>>>>> 0fe1a52926726e58c3d1944c7f290c847d845902
             }
         }
     }
