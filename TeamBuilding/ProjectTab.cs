@@ -1,12 +1,5 @@
 ﻿using System;
-<<<<<<< HEAD
 using System.Collections.Generic;
-=======
-<<<<<<< HEAD
-=======
-using System.Collections.Generic;
->>>>>>> 0fe1a52926726e58c3d1944c7f290c847d845902
->>>>>>> master
 using System.Collections.ObjectModel;
 using System.Data.Entity.Validation;
 using System.Drawing;
@@ -148,14 +141,7 @@ namespace TeamBuilding
             if (bunifuMaterialTextbox1.Text != "")
             {
                 listBox1.Items.Add(bunifuMaterialTextbox1.Text);
-<<<<<<< HEAD
                 bunifuMaterialTextbox1.Text = "";
-=======
-<<<<<<< HEAD
-=======
-                bunifuMaterialTextbox1.Text = "";
->>>>>>> 0fe1a52926726e58c3d1944c7f290c847d845902
->>>>>>> master
             }
             else
             {
@@ -168,15 +154,7 @@ namespace TeamBuilding
             try
             {
                 UsersList = new ObservableCollection<Users>(TeamBuildingEntities.Users);
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
-               
-=======
-
->>>>>>> 0fe1a52926726e58c3d1944c7f290c847d845902
->>>>>>> master
                 int projectId;
                 if (ExistedProject == null)
                 {
@@ -221,12 +199,6 @@ namespace TeamBuilding
                 }
 
                 for (int i = 0; i < listBox1.Items.Count; i++)
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-                    _newProject.Skills.Add(TeamBuildingEntities.Skills.ToList()[i]);
-=======
->>>>>>> master
                 {
                     Skills skill;
                     var check = TeamBuildingEntities.Skills.ToList().Where(k => k.SklName == listBox1.Items[i].ToString());
@@ -247,10 +219,6 @@ namespace TeamBuilding
                         _newProject.Skills.Add(TeamBuildingEntities.Skills.ToList().Last());
                     }
                 }
-<<<<<<< HEAD
-=======
->>>>>>> 0fe1a52926726e58c3d1944c7f290c847d845902
->>>>>>> master
 
                 for (int i = 0; i < checkedListBox1.Items.Count; i++)
                     if (checkedListBox1.GetItemChecked(i))
@@ -274,46 +242,6 @@ namespace TeamBuilding
 
         private void CreateOrUpdate(Projects newProject)
         {
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-            try
-            {
-                if (ExistedProject != null)
-                    TeamBuildingEntities.Projects.Remove(ExistedProject);
-
-                TeamBuildingEntities.Projects.Add(newProject);
-
-                if (ExistedProject != null)
-                    UsersList[Form1.SelectedUser - 1].Projects1.Add(newProject);
-
-                if (ExistedProject == null)
-                {
-                    UsersList[Form1.SelectedUser - 1].Projects1.Add(newProject);
-                }
-
-                try
-                {
-                    TeamBuildingEntities.SaveChanges();
-                }
-                catch (DbEntityValidationException dbEx)
-                {
-                    foreach (var validationErrors in dbEx.EntityValidationErrors)
-                    {
-                        foreach (var validationError in validationErrors.ValidationErrors)
-                        {
-                            MessageBox.Show(validationError.PropertyName +
-                                                    validationError.ErrorMessage);
-                        }
-                    }
-                }
-            }
-
-            catch (Exception exception)
-            {
-                MessageBox.Show(exception.ToString());
-=======
->>>>>>> master
             if (ExistedProject != null)//якшо обновляєм - то старий видаляєм
                 TeamBuildingEntities.Projects.Remove(ExistedProject);
             TeamBuildingEntities.Projects.Add(newProject);
@@ -347,10 +275,6 @@ namespace TeamBuilding
             {
                 listBox1.Items.RemoveAt(listBox1.SelectedIndex);
                 listBox1.SelectedIndex = -1;
-<<<<<<< HEAD
-=======
->>>>>>> 0fe1a52926726e58c3d1944c7f290c847d845902
->>>>>>> master
             }
         }
     }

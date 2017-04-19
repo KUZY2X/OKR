@@ -122,26 +122,11 @@ namespace TeamBuilding
             {
                 _currentControl.Visible = false;
                 projectListTab1.Controls.Clear();
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-                projectListTab1.Counter = 0;
-=======
->>>>>>> 0fe1a52926726e58c3d1944c7f290c847d845902
->>>>>>> master
                 projectListTab1.ShowProjects();
                 projectListTab1.Visible = true;
                 _currentControl = projectListTab1;
                 Loading();
-<<<<<<< HEAD
                 projectListTab1.Counter = 0;
-=======
-<<<<<<< HEAD
-                
-=======
-                projectListTab1.Counter = 0;
->>>>>>> 0fe1a52926726e58c3d1944c7f290c847d845902
->>>>>>> master
             }
 
             catch (Exception exception)
@@ -240,6 +225,44 @@ namespace TeamBuilding
             LoadTemplate(template);
 
             _templates.Add(template);
+        }
+
+        private void bunifuThinButton21_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                _currentControl.Visible = false;
+                projectListTab1.Controls.Clear();
+                projectListTab1.ShowProjects();
+                projectListTab1.Visible = true;
+                _currentControl = projectListTab1;
+                Loading();
+                projectListTab1.Counter = 0;
+            }
+
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.ToString());
+            }
+        }
+
+        private void bunifuThinButton22_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                _currentControl.Visible = false;
+                projectListTab1.Controls.Clear();
+                projectListTab1.ShowSortedProjects();
+                projectListTab1.Visible = true;
+                _currentControl = projectListTab1;
+                Loading();
+                projectListTab1.Counter = 0;
+            }
+
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.ToString());
+            }
         }
     }
 }
